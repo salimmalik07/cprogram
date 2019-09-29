@@ -1,0 +1,73 @@
+/*
+ Write a program to sort the elements in odd positions in descending order and elements in
+
+ascending order
+
+Eg 1: Input: 13,2 4,15,12,10,5
+
+        Output: 13,2,12,10,5,15,4
+
+Eg 2: Input: 1,2,3,4,5,6,7,8,9
+
+        Output: 9,2,7,4,5,6,3,8,1
+code:*/
+
+#include<stdio.h>
+
+#include<string.h>
+
+void main()
+
+{
+
+int a[100];
+
+int i,j,n,temp;
+
+printf("Enter the size of array:");
+
+scanf("%d",&n);
+printf("enter the ele");
+for(i=0; i<n; i++)
+{
+scanf("%d",&a[i]);
+}
+for(i=0;i<n;i+=2)
+
+{
+
+for(j=i+2;j<n;j+=2)
+
+{
+    if(a[i]<a[j])
+    {
+        temp=a[i];
+        a[i]=a[j];
+        a[j]=temp;
+    }
+}
+}
+for(i=1;i<n;i+=2)
+
+{
+
+for(j=i+2;j<n;j+=2)
+
+{
+    if(a[i]>a[j])
+    {
+        temp=a[i];
+        a[i]=a[j];
+        a[j]=temp;
+    }
+}
+}
+
+for(i=0;i<n;i++)
+{
+    printf("%d",a[i]);
+}
+}
+
+
+
